@@ -4,9 +4,11 @@ word_list = ["apple", "banana", "coconut", "dragonfruit", "eggplant"]
 
 word = random.choice(word_list)
 
-print(word)
 
-guess = input("Guess a letter, and hit enter: ")
+
+if __name__ == "__main__":
+  print(word)
+  guess = input("Guess a letter, and hit enter: ")
 
 
 while True:
@@ -16,3 +18,4 @@ while True:
   else:
     print("Oops! That is not a valid input")
     guess = input("Guess a letter, and hit enter: ")
+
