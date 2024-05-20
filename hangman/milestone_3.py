@@ -1,3 +1,7 @@
+from milestone_2 import word
+
+print(word)
+
 while True:
   guess = input("Guess a letter, and hit enter: ")
 
