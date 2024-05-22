@@ -12,10 +12,13 @@ class Hangman():
     self.list_of_guesses = []
 
   def check_guess(self, guess):
+    print(self.word_guessed)
     guess = guess.lower()
     if guess in self.word:
       print(f"Good guess! \"{guess}\" is in the word.")
-      self.word_guessed = [guess if self.word[i] == guess else self.word_guessed[i] for i in range(len(self.word))]
+      for i in range(len(self.word)):
+        if guess == self.word[i]:
+          self.word_guessed[i] = guess
       self.num_letters -= 1
     else:
       self.num_lives -= 1
