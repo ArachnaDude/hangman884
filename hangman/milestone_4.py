@@ -17,10 +17,13 @@ class Hangman():
       print(f"Good guess! \"{guess}\" is in the word.")
       self.word_guessed = [guess if self.word[i] == guess else self.word_guessed[i] for i in range(len(self.word))]
       self.num_letters -= 1
-      print(self.word_guessed)
+    else:
+      self.num_lives -= 1
+      print(f"Sorry, {guess} is not in the word. \n You have {self.num_lives} lives left")
 
   def ask_for_input(self):
     while True:
+      print(self.word_guessed)
       guess = input("Guess a letter, and hit enter: \n")
       if len(guess) != 1 or not guess.isalpha():
         print("Invalid letter. Please enter a single alphabetical character.")
