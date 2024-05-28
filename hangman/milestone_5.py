@@ -67,6 +67,7 @@ class Hangman():
         break
   
 
+
 def play_game(word_list):
   """
   Plays game of Hangman using the user-provided word list.
@@ -92,5 +93,5 @@ def play_game(word_list):
       print(f"{game.word} is correct! \nYou win")
       break
     
-
-play_game(word_list)
+if __name__ == "__main__":
+  play_game(word_list)
