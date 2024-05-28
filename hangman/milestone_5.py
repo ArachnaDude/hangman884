@@ -68,7 +68,7 @@ class Hangman():
   
 
 
-def play_game(word_list):
+def play_game(word_list) -> None:
   """
   Plays game of Hangman using the user-provided word list.
 
