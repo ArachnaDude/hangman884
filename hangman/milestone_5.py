@@ -68,6 +68,18 @@ class Hangman():
   
 
 def play_game(word_list):
+  """
+  Plays game of Hangman using the user-provided word list.
+
+  The function instantiates a new game from the Hangman class and starts a game loop.
+  The game continues until the player either guesses the puzzle correctly, or runs out of lives.
+
+  Args:
+    word_list (list): The user-provided list of words.
+  
+  Returns:
+    None
+  """
   num_lives = 5
   game = Hangman(word_list, num_lives)
   while True:
