@@ -3,7 +3,21 @@ import random
 from milestone_2 import word_list
 
 class Hangman():
+  """
+  This class generates the logic for a game of hangman against the computer.
+
+  Attributes:
+    word_list (list): the list the game puzzle will be selected from
+    word (str): a randomly selected word from the word_list
+    word_guessed (list): the current state of the puzzle, initialised as a list of underscores substituting the letters of the puzzle
+    num_letters (int): the number of unique letters in the puzzle
+    num_lives (int): the number of lives the player has left, default value = 5
+    list_of_guesses (list): the letters the player has already guessed to prevent repeat guesses.
+  """
   def __init__(self, word_list, num_lives=5) -> None:
+    """
+    see help(Hangman) for accurate signature
+    """
     self.word_list = word_list
     self.word = random.choice(word_list)
     self.word_guessed = ["_" for letter in self.word]
@@ -12,6 +26,14 @@ class Hangman():
     self.list_of_guesses = []
 
   def check_guess(self, guess) -> None:
+    """
+    This function checks the player guess against the puzzle, and responds appropriately
+
+    Args:
+      The player's guessed letter
+    Returns:
+      None 
+    """
     guess = guess.lower()
     if guess in self.word:
       print(f"Good guess! \"{guess}\" is in the word.")
@@ -24,6 +46,12 @@ class Hangman():
       print(f"Sorry, {guess} is not in the word. \n You have {self.num_lives} lives left")
 
   def ask_for_input(self) -> None:
+    """
+    This function requests and validates user input and - if valid - passes it to the check_guess() function
+
+    Returns:
+      None
+    """
     while True:
       print(self.word_guessed)
       guess = input("Guess a letter, and hit enter: \n")
