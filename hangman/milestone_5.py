@@ -1,8 +1,6 @@
 import json
 import random
 
-# from milestone_2 import word_list
-
 class Hangman():
   """
   This class generates the logic for a game of hangman against the computer.
