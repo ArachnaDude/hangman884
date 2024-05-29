@@ -19,7 +19,7 @@ In your terminal:
 
 ```
 $ git clone https://github.com/ArachnaDude/hangman884.git
-$ cd hangman884
+$ cd hangman884/hangman
 ```
 
 Open up your text editor of choice to view and run the files. The game does not utilise any packages that require separate installation.
@@ -27,12 +27,12 @@ Open up your text editor of choice to view and run the files. The game does not 
 ## Usage
 
 The logic of asking for and validating user input is controlled by the `Hangman()` class defined in `milestone_5.py`.
-However the user will interact with the game through the `play_game()` function in the same file.
+However the user will interact with the game through the `play_game()` function in the same file. The puzzle inputs are loaded by the context manager in the `get_puzzle_inputs()` function.
 
-Players guess a single letter, by typing it on the keyboard and then pressing enter. If the player tries to guess a non-letter character, or more than one character, the game will deny the input, and request a new input from the player.
+The game will provide players with a puzzle category. Players guess a single letter, by typing it on the keyboard and then pressing enter. If the player tries to guess a non-letter character, or more than one character, the game will reject the input, and request a new input from the player.
 
 Under normal usage, the game will run until the player either wins or loses. However `ctrl + C` on the keyboard will end the program, and lose any progress the player has made.
 
 To make the game either easier or harder, change the `num_lives` variable in the `play_game()` function, decreasing the number for an additional challenge, or increasing it to reduce the difficulty.
 
-For detailed instructions on the methods in the Hangman class, or for playing the game, type `help(Hangman)`, or `help(play_game)` in your terminal.
+For detailed instructions on the methods in the Hangman class, or for playing the game, type `help(Hangman)`, `help(play_game)`, or `help(get_puzzle_inputs())` in your terminal.
